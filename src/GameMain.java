@@ -5,5 +5,7 @@ public class GameMain {
 		// TODO 自動生成されたメソッド・スタブ
 		new GameFrame();
 	}
+	
+	
 
 }
