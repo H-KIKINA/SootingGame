@@ -5,14 +5,26 @@ public class GameFrame extends MyFrame{
 		GameWorld.player=new Player(100,300,0,0);
 		addKeyListener(GameWorld.player);//イベントリスナー登録
 		GameWorld.playerBullets=new Vector<PlayerBullet>();
+		GameWorld.enemies=new Vector<Enemy>();
+		GameWorld.enemies.add(new EnemyBase(100,50,1,0));
 		
 		while(true) {
-			clear();
+			clear(); 
 			GameWorld.player.draw(this);
 			GameWorld.player.move();
 			movePlayerBullets();
+			moveEnemies();
+			
 			sleep(0.03);
 		}
+	}
+			private void moveEnemies() {
+		// TODO 自動生成されたメソッド・スタブ
+				for (int i=0;i<GameWorld.enemies.size();i++) {
+					Enemy e=GameWorld.enemies.get(i);
+					e.draw(this);
+					e.move();
+				}
 	}
 			private void movePlayerBullets() {
 				// TODO 自動生成されたメソッド・スタブ
