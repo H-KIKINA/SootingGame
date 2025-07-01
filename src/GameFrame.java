@@ -6,6 +6,7 @@ public class GameFrame extends MyFrame{
 		addKeyListener(GameWorld.player);//イベントリスナー登録
 		GameWorld.stage=1;
 		GameWorld.score=0;
+		   
 		while(true) {
 			GameWorld.player.x=100;
 			GameWorld.player.y=300;
@@ -40,27 +41,35 @@ public class GameFrame extends MyFrame{
 						break;
 					}
 				}
+				 repaint();
 				sleep(0.03);
 			}
 		}
-	}
+		}
+		
+	
 	
 			private void moveEnemies() {
-		// TODO 自動生成されたメソッド・スタブ
-				for (int i=0;i<GameWorld.enemies.size();i++) {
-					Enemy e=GameWorld.enemies.get(i);
-					e.draw(this);
-					e.move();
-				}
-				int i=0;
-				while(i<GameWorld.enemies.size()) {
-					Enemy e=GameWorld.enemies.get(i);
-					if(e.y>400) {
-						GameWorld.enemies.remove(i);
-					}else {
-						i++;
-					}
-				}
+				int i = 0;
+			    while (i < GameWorld.enemies.size()) {
+			        Enemy e = GameWorld.enemies.get(i);
+
+			        // 👇 OriginalEnemyならupdate(player, enemies)を呼び出す
+			        if (e instanceof OriginalEnemy) {
+			        	
+			            ((OriginalEnemy) e).update(GameWorld.player, GameWorld.enemies);
+			        }
+
+			        e.draw(this);
+			        e.move();
+
+			        // 画面外に出た敵を削除
+			        if (e.y > 300) {
+			            GameWorld.enemies.remove(i);
+			        } else {
+			            i++;
+			        }
+			    }
 			}
 			private void movePlayerBullets() {
 				// TODO 自動生成されたメソッド・スタブ
@@ -125,5 +134,6 @@ public class GameFrame extends MyFrame{
 					return false;//D
 				}
 			}
+			
 }
 			

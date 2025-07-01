@@ -7,6 +7,7 @@ public class Character {
 		this.y=y;
 		this.vx=vx;
 		this.vy=vy;
+
 	}
 	public void move(){
 		x+=vx;

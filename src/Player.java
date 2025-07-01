@@ -30,6 +30,10 @@ public class Player extends Character implements KeyListener{
 			System.out.println("Enterキーが押されました");
 			GameWorld.enterPressed=true;
 		}
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            System.exit(0);  // ESCキーでプログラム終了
+        }
+		
 		}
 	public void keyReleased(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_LEFT) {

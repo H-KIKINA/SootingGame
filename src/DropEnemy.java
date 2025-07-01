@@ -12,6 +12,6 @@ public class DropEnemy extends Enemy{
 	}
 	public void move() {
 		super.move();
-		vy=GameWorld.stage+0.1;
+		vy=vy+0.1;
 	}
 }
