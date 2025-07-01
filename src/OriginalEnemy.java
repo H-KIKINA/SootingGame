@@ -21,8 +21,8 @@ public class OriginalEnemy extends Enemy{
 		  
 		    if (!split && distance < 130) {
 		        split = true;
-		        GameWorld.enemies.add(new OriginalEnemy(this.x - 20, this.y, 0, 2,true));
-		        GameWorld.enemies.add(new OriginalEnemy(this.x + 20, this.y, 0, 2,true));
+		        GameWorld.enemies.add(new OriginalEnemy(this.x - 30, this.y, 0, 2,true));
+		        GameWorld.enemies.add(new OriginalEnemy(this.x + 30, this.y, 0, 2,true));
 		    }
 		    move();
 	    }

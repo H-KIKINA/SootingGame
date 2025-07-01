@@ -64,7 +64,7 @@ public class GameFrame extends MyFrame{
 			        e.move();
 
 			        // 画面外に出た敵を削除
-			        if (e.y > 300) {
+			        if (e.y > 350) {
 			            GameWorld.enemies.remove(i);
 			        } else {
 			            i++;

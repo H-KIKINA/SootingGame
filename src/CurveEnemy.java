@@ -5,7 +5,7 @@ public class CurveEnemy extends Enemy{
 		life=3+GameWorld.stage;
 	}
 	public void draw (MyFrame f) {
-		f.setColor(0,0,0);
+		f.setColor(255,244,80);
 		f.fillOval(x,y,30,30);
 		f.setColor(255,255,255);
 		f.fillOval(x+5,y,20,30);
